@@ -10,23 +10,19 @@
 
 <input id="serviceCharge" type="number" placeholder="Service Charge (%)"> <br>
 
-<button onclick="totalMeal()">Calculate Total</button>
+<button onclick="calculateTotalMeal()">Calculate Total</button>
 
 <div id="totalMeal"></div>
 
     <script>
-        function totalMeal(mealPrice, myTip, serviceCharge) {
-         mealPrice = Number(mealprice.value);
-         myTip = Number(tip.value);
-         serviceCharge = Number(service_charge.value);
-        
-        totalMeal = mealPrice + myTip + ( serviceCharge / 100 * mealPrice);
-        alert("Total Amount: Php" + totalCost.toFixed(2));
-        totalMeal.innerHTML = "Total Amount: Php"+ totalCost.toFixed(2);
-            return totalMeal;
+        function calculateTotalMeal() {
+         let mealPrice = Number(document.getElementById("mealPrice").value);
+         let myTip = Number(document.getElementById("myTip").value);
+         let serviceCharge = Number(document.getElementById("serviceCharge").value);
+
+        let totalCost = mealPrice + myTip + (serviceCharge / 100 * mealPrice);
+            totalMeal.innerHMTL = "Your total amount: Php" + totalCost.toFixed(2);
         }
-    const result = totalMeal();
-    console.log("Your total cost is ", result);
     </script>
 
 </body>
