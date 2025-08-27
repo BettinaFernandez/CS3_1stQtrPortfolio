@@ -1,0 +1,12 @@
+button {
+  padding: 20px 20px;
+  font-size: 5rem;
+  background-color: royalblue;
+  border-width: 0.5cm;
+  border-color: rgb(19, 56, 124);
+  font-family:'Franklin Gothic Medium';
+  cursor: pointer;
+  color:rgb(245, 247, 251)
+
+
+}
