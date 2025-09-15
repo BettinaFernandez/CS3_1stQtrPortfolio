@@ -1,20 +1,13 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: center;
     padding: 0;
   }
   header {
-    background-color: #4a90e2;
-    color: white;
+    font-family:monospace;
+    font-size:xx-large;
+    transition: transform 0.5s ease-in-out;
+    background-color: rgb(255, 255, 225);
+    color:rgb(129, 95, 66);
     padding: 2em;
-    text-align: center;
-  }
-  section {
-    padding: 1.5em;
-  }
-  footer {
-    text-align: center;
-    padding: 1em;
-    background-color: #eee;
-  }
-  
+    text-align: center; }
