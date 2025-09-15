@@ -1,0 +1,26 @@
+<h1> 3rd Graded Exercise by Bettina of Strontium <h1>
+
+<input id="mealprice" type="number" placeholder="Meal Price"> <br>
+
+<input id="tip" type="number" placeholder="Tip Percentage"> <br>
+
+<input id="servicecharge type="number" placeholder="Service Charge (%)"> <br>
+
+<button onclick="calculateTotal()">Calculate Total</button>
+
+<div id="totalOutput"></div>
+
+<script>
+
+    function calculateTotal() {
+         mealprice = Number(mealprice.value);
+         myTip = Number(tip.value);
+         serviceCharge = Number(service_charge.value);
+        
+        total = (mealprice + myTip) + (mealprice * serviceCharge/100);
+        totalOutput.innerHTML = "Total Amount: Php"+ total.toPrecision(6);
+        alert("Total Amount: Php" + total.toFixed(2));
+        console.log("Total AmountL Php" + total.toExponential());
+
+    }
+</script>
