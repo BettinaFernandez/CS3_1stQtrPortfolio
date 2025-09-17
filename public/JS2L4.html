@@ -6,17 +6,24 @@
 <input type="text" id="guessInput" maxlength="1">
 <button onclick="makeGuess()">Guess</button>
 <p id="message"></p>
-<link rel="stylesheet" href="style.css">
+<p>Wrongs: <span id="wrong">0</span> / <span id="maxwrong">5</span></p>
+<link rel="stylesheet" href="style4.css">
+
 </head>
 <body> 
 <script>
   let secretWord = ["b", "o", "l", "d", "b", "e", "t", "t", "y"];
   let guessedWord = ["_", "_", "_", "_", "_", "_", "_", "_", "_"];
 
+  let wrong = 0;
+  let maxwrong = 5;
+
   document.getElementById("wordDisplay").textContent = guessedWord.join(" ");
+  document.getElementById("maxwrong").textContent = maxwrong;
 
   function makeGuess() {
-    let guess = document.getElementById("guessInput").value.toLowerCase();
+    let guessInput = document.getElementById("guessInput");
+    let guess = guessInput.value.toLowerCase();
     let correct = false;
 
     for (let i = 0; i < secretWord.length; i++) {
@@ -26,13 +33,23 @@
       }
     }
 
+    if (!correct){
+      wrong++;
+      document.getElementById("wrong").textContent = wrong;
+    }
+
     document.getElementById("wordDisplay").textContent = guessedWord.join(" ");
-    document.getElementById("message").textContent = correct ? "✅ So pro so pro!" : "❌ Whoopsies...";
-    document.getElementById("guessInput").value = "";
-  }
+    
+    if (!guessedWord.includes("_")) {
+      document.getElementById("message").textContent = "🎉 You guessed it! GG!";
+      guessInput.disabled = true;
+
+    } else if (wrong >= maxwrong) {
+      document.getElementById("message").textContent = "💀 You ran out of tries! Try again?";
+      guessInput.disabled = true; }
+    else { document.getElementById("message").textContent = correct ? "✅ So pro so pro!" : "❌ Whoopsies..."; }
+
+}
 </script>
-
-
-
 </body>
 </html>
