@@ -1,12 +1,12 @@
 <html>
 <head>
 
-<h1>Guess My Word</h1>
+<h1>Guess My Word !! 𐔌՞. .՞𐦯 </h1>
 <p id="wordDisplay"></p>
 <input type="text" id="guessInput" maxlength="1">
 <button onclick="makeGuess()">Guess</button>
 <p id="message"></p>
-<p>Wrongs: <span id="wrong">0</span> / <span id="maxwrong">5</span></p>
+<p>Mistakes: <span id="wrong">0</span> / <span id="maxwrong">5</span></p>
 <link rel="stylesheet" href="style4.css">
 
 </head>
@@ -41,11 +41,11 @@
     document.getElementById("wordDisplay").textContent = guessedWord.join(" ");
     
     if (!guessedWord.includes("_")) {
-      document.getElementById("message").textContent = "🎉 You guessed it! GG!";
+      document.getElementById("message").textContent = "You guessed it yaaaay!";
       guessInput.disabled = true;
 
     } else if (wrong >= maxwrong) {
-      document.getElementById("message").textContent = "💀 You ran out of tries! Try again?";
+      document.getElementById("message").textContent = "You ran out of tries! Try again?";
       guessInput.disabled = true; }
     else { document.getElementById("message").textContent = correct ? "✅ So pro so pro!" : "❌ Whoopsies..."; }
 
