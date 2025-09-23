@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+:root{
+  --neon-purple:#8c00ff;
+  --neon-green:#88ff00;
+  --neon-blue:#28a2ff;
+  --neon-pink:#ff28fb;
+  --speed:20s;
+  --size:120px;
+}
+body{ background:#070c1d; margin:0; overflow:hidden; }
+.jellyfish{
+  position:absolute; top:50vh; left:-30vw; width:var(--size); height:auto;
+  animation: swim var(--speed) linear infinite;
+  filter: drop-shadow(0 0 4px var(--neon)) drop-shadow(0 0 12px var(--neon));
+}
+.jellyfish.purple {
+  top: 50vh;
+  left: -30vw;
+  color: var(--neon-purple);
+  filter: drop-shadow(0 0 4px var(--neon-purple)) drop-shadow(0 0 12px var(--neon-purple));
+  animation-delay: 0s;
+}
+
+.jellyfish.green {
+  top: 30vh;
+  left: -40vw;
+  color: var(--neon-green);
+  filter: drop-shadow(0 0 4px var(--neon-green)) drop-shadow(0 0 12px var(--neon-green));
+  animation-delay: 2s; 
+}
+
+.jellyfish.blue {
+  top: 10vh;
+  left: 100vw;
+  color: var(--neon-blue);
+  filter: drop-shadow(0 0 4px var(--neon-blue)) drop-shadow(0 0 12px var(--neon-blue));
+  animation: swimLeft var(--speed) linear infinite;
+  animation-delay: 1s; 
+}
+
+.jellyfish.pink {
+  top: -30vh;
+  left: 25vw;
+  color: var(--neon-pink);
+  filter: drop-shadow(0 0 4px var(--neon-pink)) drop-shadow(0 0 12px var(--neon-pink));
+  animation: swimDown var(--speed) linear infinite;
+  animation-delay: 3s; 
+}
+.bell{
+  width:var(--size); height:calc(var(--size)*.8);
+  border-radius:50% 50% 45% 45%;
+  background: currentColor; opacity:.8;
+  animation: breathe 4s ease-in-out infinite;
+}
+.tentacles {
+  margin-top: 0px;
+  text-align: center;
+}
+
+.tentacle {
+  display:inline-block; 
+  width: 6px;
+  height: calc(var(--size)*1.2);
+  background: currentColor;
+  margin: 6px;
+  animation: squiggle 3s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+@keyframes swim{
+  0% { transform: translateX(-10vw);}
+  100%{ transform: translateX(130vw);}
+}
+
+@keyframes swimLeft {
+    0% { transform: translateX(10vw);}
+  100%{ transform: translateX(-130vw);}
+}
+
+@keyframes swimDown {
+      0% { transform: translateY(10vw);}
+  100%{ transform: translateY(120vw);}
+}
+
+@keyframes breathe{
+  0%,100%{ transform: scaleY(1); }
+  50%    { transform: scaleY(1.2)}
+}
+@keyframes squiggle{
+  0%   { transform: rotate(0deg); }
+  25%  { transform: rotate(10deg); }
+  50%  { transform: rotate(0deg); }
+  75%  { transform: rotate(-10deg); }
+  100% { transform: rotate(0deg); }
+}
+
+</style>
+</head>
+<body>
+<div class="jellyfish purple">
+  <div class="bell"></div>
+  <div class="tentacles">
+ <span class="tentacle" style="animation-delay: 0s;"></span>
+<span class="tentacle" style="animation-delay: 0.2s;"></span>
+<span class="tentacle" style="animation-delay: 0.4s;"></span>
+<span class="tentacle" style="animation-delay: 0.6s;"></span>
+  </div>
+</div>
+
+<div class="jellyfish green" style="color: var(--neon-green);">
+  <div class="bell"></div>
+  <div class="tentacles">
+    <span class="tentacle" style="animation-delay: 0s;"></span>
+    <span class="tentacle" style="animation-delay: 0.2s;"></span>
+    <span class="tentacle" style="animation-delay: 0.4s;"></span>
+    <span class="tentacle" style="animation-delay: 0.6s;"></span>
+  </div>
+</div>
+
+<div class="jellyfish blue" style="color: var(--neon-blue);">
+  <div class="bell"></div>
+  <div class="tentacles">
+    <span class="tentacle" style="animation-delay: 0s;"></span>
+    <span class="tentacle" style="animation-delay: 0.2s;"></span>
+    <span class="tentacle" style="animation-delay: 0.4s;"></span>
+    <span class="tentacle" style="animation-delay: 0.6s;"></span>
+  </div>
+</div>
+
+<div class="jellyfish pink" style="color: var(--neon-pink);">
+  <div class="bell"></div>
+  <div class="tentacles">
+    <span class="tentacle" style="animation-delay: 0s;"></span>
+    <span class="tentacle" style="animation-delay: 0.2s;"></span>
+    <span class="tentacle" style="animation-delay: 0.4s;"></span>
+    <span class="tentacle" style="animation-delay: 0.6s;"></span>
+  </div>
+</div>
+
+</body>
+</html>
+
