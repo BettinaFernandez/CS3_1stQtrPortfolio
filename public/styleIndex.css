@@ -1,0 +1,26 @@
+body {
+font-family:monospace; 
+font-weight: bold;
+font-style: italic;
+color:rgb(81, 20, 47);
+background-image: url("https://i.pinimg.com/1200x/9f/57/73/9f5773049a27986318e774c010c0d6c6.jpg");
+background-size: cover;
+background-position: center;
+text-align: center;
+font-size: xx-large;
+}
+
+@keyframes colorChange {
+  0%   { color: #88478f; }
+  50%  { color: #6ea36d; }
+  100% { color: #bb601f; }
+}
+
+h1 {
+  animation: colorChange 3s infinite alternate;
+  font-weight:bolder;
+}
+
+h2{
+    font-weight: bolder;
+}
