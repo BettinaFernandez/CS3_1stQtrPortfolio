@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+   <h2> Q1 3rd Graded Exercise submitted by Bettina of Strontium </h2>
+
+    <h3> Guess my number: *** </h3> 
+<h3> My number is between 1 - 100 </h3>
+
+<h3> What's your guess!! : </h3> 
+    <input id="answer" type="number"><br>
+
+<button onclick="checkIt()">Check your guess</button>
+<div id="guess"></div>
+
+    <script>
+       var dNumber = Math.floor(Math.random() * 100) + 1;
+
+        function checkIt() {
+            let ans = Number(answer.value);
+            let output = String();
+
+            if (ans == dNumber){
+                output = "Yaaay you guessed correctly!";
+            }
+            else if (ans > dNumber){
+                output = "Answer is out of the roofs! Lower";
+            }
+            else{
+                output = "Your guess is so low I can barely see it :C Higher!"
+            }
+              
+            guess.innerHTML = output;
+            
+         
+        }
+    </script>
+
+</body>
+
+</html>
